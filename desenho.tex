@@ -1,0 +1,96 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% Desenho da aplicação LIXT, para a disciplina PI1A5
+% Equipe TGT
+% 1° semestre de 2021
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,
+	openright,
+	oneside,
+	a4paper,
+	% -- opções do pacote babel --
+	english,
+	brazil
+  ]{abntex2}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{microtype}
+
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[alf]{abntex2cite}
+
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+
+\include{capitulos/capa_contracapa}
+
+\definecolor{blue}{RGB}{41,5,195}
+
+\makeatletter
+\hypersetup{
+  pdftitle={\@title},
+  pdfauthor={\@author},
+  pdfsubject={\imprimirpreambulo},
+  pdfcreator={LaTeX with abnTeX2},
+  pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  filecolor=magenta,
+  urlcolor=blue,
+  bookmarksdepth=4
+}
+\makeatother
+
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm}
+
+\begin{document}
+
+
+\selectlanguage{brazil}
+\frenchspacing
+
+\imprimircapa
+\imprimirfolhaderosto*
+
+\textual
+
+\include{capitulos/introducao}
+
+% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+% Coloquem aqui o include dos capitulos de voces
+% e o arquivo correspondente na pasta capitulos
+% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+
+\phantompart
+\postextual
+
+\bibliography{referencias/referencias}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
