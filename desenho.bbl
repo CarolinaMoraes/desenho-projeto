@@ -1,0 +1,21 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Brasil 2018]{leigpd}
+\abntrefinfo{Brasil}{BRASIL}{2018}
+{BRASIL. \emph{Lei Geral de Proteção de Dados}. 2018.
+Dispon{\'\i}vel em:
+  \url{http://www.planalto.gov.br/ccivil\_03/\_ato2015-2018/2018/lei/l13709.htm}.
+  Acesso em: 7 jun. 2021.}
+
+\bibitem[Lamba 2019]{anilLamba}
+\abntrefinfo{Lamba}{LAMBA}{2019}
+{LAMBA, A. Api design principles and security best practices – accelerate
+  your business without compromising security.
+\emph{SSRN Electronic Journal}, 01 2019.}
+
+\end{thebibliography}

@@ -25,6 +25,7 @@
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{microtype}
+\usepackage{float}
 
 \usepackage[brazilian,hyperpageref]{backref}
 \usepackage[alf]{abntex2cite}
@@ -71,6 +72,11 @@
 
 \imprimircapa
 \imprimirfolhaderosto*
+
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
 
 \include{capitulos/siglas.tex}
 
