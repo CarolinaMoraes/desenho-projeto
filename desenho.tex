@@ -63,18 +63,22 @@
 \setlength{\parindent}{1.3cm}
 \setlength{\parskip}{0.2cm}
 
+\graphicspath{ {./images} }
+
 \begin{document}
-
-
 \selectlanguage{brazil}
 \frenchspacing
 
 \imprimircapa
 \imprimirfolhaderosto*
 
+\include{capitulos/siglas.tex}
+
 \textual
 
-\include{capitulos/introducao}
+\include{capitulos/introducao.tex}
+
+\include{capitulos/arquitetura.tex}
 
 % ------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------
@@ -89,7 +93,6 @@
 \bibliography{referencias/referencias}
 
 \end{document}
-
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
