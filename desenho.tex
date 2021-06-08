@@ -25,6 +25,8 @@
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{microtype}
+\usepackage{datatool}
+\usepackage{glossaries}
 
 \usepackage[brazilian,hyperpageref]{backref}
 \usepackage[alf]{abntex2cite}
@@ -65,6 +67,9 @@
 
 \graphicspath{ {./images} }
 
+\makenoidxglossaries
+\input{capitulos/glossario.tex}
+
 \begin{document}
 \selectlanguage{brazil}
 \frenchspacing
@@ -90,6 +95,8 @@
 
 \phantompart
 \postextual
+
+\printnoidxglossary[sort=word]
 
 \bibliography{referencias/referencias}
 
