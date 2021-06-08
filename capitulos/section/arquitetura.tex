@@ -5,12 +5,12 @@ como necessários, a arquitetura cliente-servidor é plausível como
 modelo para o produto que pretendemos entregar.
 Esta arquitetura é composta por duas aplicações distintas:
 \begin{itemize}
-\item Uma aplicação \emph{front-end}, focada na interação com o usúario
+\item Uma aplicação \gls{frontend}, focada na interação com o usúario
   e apresentação de dados de uma forma agradável e intuitiva. Esta
   aplicação será implementada em JavaScript, com o framework React
   Native, e disponibilizada para as plataformas iOS e Android.
-\item Uma aplicação \emph{back-end}, que será responsável por tratar os
-  dados coletados no \emph{front-end} e disponibilizar as informações
+\item Uma aplicação \gls{backend}, que será responsável por tratar os
+  dados coletados no \gls{frontend} e disponibilizar as informações
   que serão mostradas aos usuários. Como esta aplicação requer uma
   lógica de servidor, estabilidade e ampla disponiblidade, esta
   aplicação será implementada em Java, com uso do framework Spring
@@ -36,16 +36,16 @@ auxiliando a criação de pontos na aplicação do servidor focados na
 comunicação com a aplicação cliente.
 
 O uso do protocolo HTTPS oferece alguamas vantagens a aplicação
-\emph{front-end}, que não precisa esperar uma solicitação ao
-\emph{back-end} ser finalizada antes de realizar outras solicitações,
+\gls{frontend}, que não precisa esperar uma solicitação ao
+\gls{backend} ser finalizada antes de realizar outras solicitações,
 aumentando a repsonsividade da aplicação cliente. Para além disso,
-quando combinada ao modelo \label{sig:rest}\hyperlink{s:rest}{REST} na
+quando combinada ao modelo \label{sig:rest}\gls{REST} na
 construção da \label{sig:API}\gls{API}, o protocolo HTTP
 oferece meios eficientes para que as aplicações se comuniquem.
 
 Como plataforma de servidor, o serviço AWS será utilizado, uma vez que
 é oferecida de maneira gratuita para a realização deste projeto, e nele
-serão armazenadas algumas instâncias da aplicação \emph{back-end}.
+serão armazenadas algumas instâncias da aplicação \gls{backend}.
 Esta redundância é necessária como forma de garantir a estabilidade do
 sistema, de forma que sempre haja alguma disponível para o
 processamento de novas requisições, e, em caso de falha numa delas, o
