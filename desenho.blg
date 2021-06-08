@@ -1,10 +1,6 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: desenho.aux
-Reallocating 'name_of_file' (item size: 1) to 25 items.
-A level-1 auxiliary file: capitulos/introducao.aux
-Reallocating 'name_of_file' (item size: 1) to 37 items.
-A level-1 auxiliary file: capitulos/tecnologias_utilizadas.aux
 Reallocating 'name_of_file' (item size: 1) to 16 items.
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 Reallocating 'name_of_file' (item size: 1) to 12 items.
@@ -20,7 +16,6 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Database file #1: abntex2-options.bib
 Database file #2: referencias/referencias.bib
-Warning--I didn't find a database entry for "Alga2017"
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
@@ -30,45 +25,44 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 2 entries,
+You've used 3 entries,
             6714 wiz_defined-function locations,
-            1207 strings with 9503 characters,
-and the built_in function-call counts, 1401 in all, are:
-= -- 218
-> -- 15
+            1209 strings with 9571 characters,
+and the built_in function-call counts, 1904 in all, are:
+= -- 243
+> -- 30
 < -- 0
-+ -- 51
-- -- 5
-* -- 70
-:= -- 254
-add.period$ -- 3
-call.type$ -- 2
-change.case$ -- 10
-chr.to.int$ -- 2
-cite$ -- 1
-duplicate$ -- 32
-empty$ -- 85
-format.name$ -- 23
-if$ -- 316
++ -- 56
+- -- 10
+* -- 100
+:= -- 332
+add.period$ -- 6
+call.type$ -- 3
+change.case$ -- 17
+chr.to.int$ -- 3
+cite$ -- 2
+duplicate$ -- 61
+empty$ -- 130
+format.name$ -- 46
+if$ -- 427
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 26
-newline$ -- 13
-num.names$ -- 5
-pop$ -- 48
+missing$ -- 42
+newline$ -- 18
+num.names$ -- 10
+pop$ -- 70
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 9
 quote$ -- 0
-skip$ -- 110
+skip$ -- 140
 stack$ -- 1
-substring$ -- 66
-swap$ -- 8
+substring$ -- 83
+swap$ -- 15
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 8
+while$ -- 14
 width$ -- 0
-write$ -- 22
-(There was 1 warning)
+write$ -- 35

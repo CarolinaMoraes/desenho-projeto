@@ -10,4 +10,9 @@
 {PADMANABHAN, A. Convention over configuration.
 \emph{Devopedia}, 2020.}
 
+\bibitem[Sun{ }Microsystems 1997]{Oracle1997}
+\abntrefinfo{Sun{ }Microsystems}{SUN{ }MICROSYSTEMS}{1997}
+{SUN{ }MICROSYSTEMS, I. Java coding conventions.
+1997.}
+
 \end{thebibliography}
