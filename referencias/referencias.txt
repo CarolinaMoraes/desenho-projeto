@@ -1,0 +1,11 @@
+% Encoding: UTF-8
+@MISC{google_admob,
+author = {Google AdMob},
+title = {Quanto é possível lucrar com a AdMob},
+month = Junho,
+year = {20},
+url = {https://admob.google.com/intl/pt-BR_br/home/resources/how-much-revenue-can-you-earn-from-admob/}
+}
+
+
+@Comment{jabref-meta: databaseType:bibtex;}
