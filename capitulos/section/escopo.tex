@@ -1,65 +1,3 @@
-\chapter{Desenvolvimento da Aplicação}
-
-Neste capítulo descrevemos os conceitos, análises e ferramentas
-utilizadas pela equipe TGT para o desenvolvimento do porduto Lixt,
-incluindo os requisitos do projeto, as tecnologias utilizadas, e a
-arquitetura e a modelagem do produto.
-Isto é apresentado para que se possa estabelecer parâmetros e métricas
-que guiarão o desenvolvimento e a entrega final do projeto.
-
-\section{Arquitetura}
-Com base na análise do projeto, e nos requisitos que foram levantados
-como necessários, a arquitetura cliente-servidor é plausível como
-modelo para o produto que pretendemos entregar.
-Esta arquitetura é composta por duas aplicações distintas:
-\begin{itemize}
-\item Uma aplicação \emph{front-end}, focada na interação com o usúario
-  e apresentação de dados de uma forma agradável e intuitiva. Esta
-  aplicação será implementada em JavaScript, com o framework React
-  Native, e disponibilizada para as plataformas iOS e Android.
-\item Uma aplicação \emph{back-end}, que será responsável por tratar os
-  dados coletados no \emph{front-end} e disponibilizar as informações
-  que serão mostradas aos usuários. Como esta aplicação requer uma
-  lógica de servidor, estabilidade e ampla disponiblidade, esta
-  aplicação será implementada em Java, com uso do framework Spring
-  Boot, que abstrai a criação de um servidor.
-\end{itemize}
-Podemos ver na \autoref{fig:cli-srv} uma respresentação desta
-arquitetura.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.4]{lixt}
-  \caption{Arquitetura Lixt}
-  \label{fig:cli-srv}
-\end{figure}
-
-A comunicação entre estes serviços será feita com o uso do protocolo
-\label{sig:https}\hyperlink{s:http}{HTTPS}, que permite a aplicação
-cliente realizar chamadas ao servidor através de urls, seja para
-buscar informações para apresentar ao usuário ou postar informações
-coletadas dele. O framework Spring, além de abstrair a implementação
-da lógica de um servidor, implementa \emph{listeners} para estas urls,
-auxiliando a criação de pontos na aplicação do servidor focados na
-comunicação com a aplicação cliente.
-
-O uso do protocolo HTTPS oferece alguamas vantagens a aplicação
-\emph{front-end}, que não precisa esperar uma solicitação ao
-\emph{back-end} ser finalizada antes de realizar outras solicitações,
-aumentando a repsonsividade da aplicação cliente. Para além disso,
-quando combinada ao modelo \label{sig:rest}\hyperlink{s:rest}{REST} na
-construção da \label{sig:API} \hyperlink{s:API}{API}, o protocolo HTTP
-oferece meios eficientes para que as aplicações se comuniquem.
-
-Como plataforma de servidor, o serviço AWS será utilizado, uma vez que
-é oferecida de maneira gratuita para a realização deste projeto, e nele
-serão armazenadas algumas instâncias da aplicação \emph{back-end}.
-Esta redundância é necessária como forma de garantir a estabilidade do
-sistema, de forma que sempre haja alguma disponível para o
-processamento de novas requisições, e, em caso de falha numa delas, o
-serviço não seja interrompido aos usuários.
-
-
 \section{Escopo do Projeto}
 
 Lixt é um aplicativo para gerenciamento de listas de compras compartilhadas ou não.
@@ -92,7 +30,7 @@ A seguir listamos as principais funcionalidades como uma lista de tópicos para 
 							\item Criar nova categoria;
 						\end{itemize}
 					\item Adicionar um comentário;
-					\item Atribuir a um usuário (caso a lista tenha sido compartilhada e pelo menos um covite já tenha sido aceito);
+					\item Atribuir a um usuário (caso a lista tenha sido compartilhada e pelo menos um convite já tenha sido aceito);
 				\end{itemize}
 			\item Remover itens;
 			\item Convidar pessoas para a lista (apenas quem criou a lista):
@@ -156,7 +94,7 @@ Para o \textit{Minimum Viable Product} (\label{sig:mvp}\hyperlink{s:mvp}{MVP}) v
 							\item Criar uma nova categoria;
 						\end{itemize}
 					\item Adicionar um comentário;
-					\item Atribuir a um usuário (caso a lista tenha sido compartilhada e pelo menos um covite já tenha sido aceito);
+					\item Atribuir a um usuário (caso a lista tenha sido compartilhada e pelo menos um convite já tenha sido aceito);
 				\end{itemize}
 			\item Remover itens;
 			\item Convidar pessoas para a lista (apenas quem criou a lista):
@@ -223,28 +161,3 @@ Na Tabela \ref{reqNaoFuncionais} estão elencados os requisitos não funcionais,
 \label{reqNaoFuncionais}
 \fonte{Os Autores}
 \end{table}
-
-
-\section{Segurança, Privacidade e Legislação}
-
-A principal lei brasileira que trata de tratamento de dados  nos meios digitais é a lei N° 13.709, sancionada em 14 de Agosto de 2018 \cite{leigpd} e que entrou em vigor no ano de 2020, conhecida como Lei Geral de Proteção de Dados (\label{sig:lgpd}\hyperlink{s:lgpd}{LGPD}).
-
-Seguindo o disposto no Artigo 6°, inciso terceiro da LGPD, a aplicação vai coletar o mínimo de dados do usuário necessários para uso da aplicação, os dados serão: localização, endereço de email e nome do usuário. Sendo facultativo ao usuário ativar ou não a sua localização.
-
-O design da aplicação vai seguir o princípio da transparência. O usuário do aplicativo será informado de quais as informações que serão coletadas. O próprio sistema Android, por padrão, solicita ao usuário permissão para uso da localização, um dos dados que será necessário coletar, caso o usuário opte pela detecção do local da compra automaticamente.
-
-Como a maioria dos sistemas atuais, utilizaremos uma API (Application Program Interface) para realizar a comunicação e transferência de dados entre a interface de usuário e o servidor. Essa arquitetura possui intrinsecamente vulnerabilidades conhecidas e quando não são bem projetadas as API’s podem ser um dos pontos fracos do sistema quando se trata de segurança. A empresa de consultoria Gartner \cite{anilLamba} prevê que a tendência é que em 2022 as API’s se tornem o principal foco de ataques cibernéticos.
-
-Cientes desse cenário, foi definido que o sistema deverá seguir algumas boas práticas de desenvolvimento, citadas brevemente a seguir:
-\begin{itemize}
-	\item Autenticação: As requisições apenas serão aceitas se o usuário estiver logado no sistema;
-	\item Criptografia: Para evitar ataques do tipo man-in-the-middle as mensagens entre cliente e servidor serão criptografadas, seguindo o protocolo HTTPS;
-	\item Documentação dos \textit{endpoints} sensíveis: Será feito um levantamento de todos os \textit{endpoints} que acessam informações sensíveis, para garantir que apenas usuários autenticados tenham acesso;
-\end{itemize}
-
-Como medida de segurança, o banco de dados não irá armazenar as senhas das contas dos usuários e sim um \textit{hash} da senha, e este será comparado com o \textit{hash} da senha informado no momento do login. Ainda como uma forma de segurança, ao cadastrar a senha ou mudar a senha atual o usuário não poderá cadastrar senha que não possua menos de seis dígitos, e que não tenham letras maiúsculas e minúsculas e números, e deverá ter no mínimo um caractere especial.
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "../desenho"
-%%% End:
