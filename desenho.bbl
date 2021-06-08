@@ -5,6 +5,21 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem[Amazon 2021]{AmazonRDS}
+\abntrefinfo{Amazon}{AMAZON}{2021a}
+{AMAZON. Amazon rds on vmware pricing.
+2021.}
+
+\bibitem[Amazon 2021]{AmazonEC2}
+\abntrefinfo{Amazon}{AMAZON}{2021b}
+{AMAZON. Preço sob demanda do amazon ec2.
+2021.}
+
+\bibitem[Google 2021]{GoogleAdMob}
+\abntrefinfo{Google}{GOOGLE}{2021}
+{GOOGLE. Quanto é possível lucrar com a admob.
+2021.}
+
 \bibitem[PADMANABHAN 2020]{Devopedia2020}
 \abntrefinfo{PADMANABHAN}{PADMANABHAN}{2020}
 {PADMANABHAN, A. Convention over configuration.
