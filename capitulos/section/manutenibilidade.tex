@@ -1,8 +1,83 @@
 \section{Mantenibilidade da aplicação}
-É fundamental para o desenvolvimento do projeto, tanto o previsto
-quanto em avanços posteriores, que certos requisitos de
-manutenibilidade sejam estabelecidos. Estes requisitos são
-indispensáveis para que que a aplicação atinja um nível adequado de
-qualidade, 
 
-\subsection{Code Conventions}
+É fundamental para o desenvolvimento do projeto, tanto o previsto
+quanto em avanços posteriores, que a aplicação atinja um nível adequado
+de qualidade, e para tanto certos requisitos de manutenibilidade devem
+ser estabelecidos.  Estes requisitos permitem a
+
+\subsection{\emph{Logs}}
+
+Como forma de monitorar a aplicação em tempo de execução,
+especialmente na camada de servidor, \emph{logs} serão usados para
+registrar o estado dos objetos. A ferramenta Log4j será usada, uma vez
+que os membros do time já tem mais familiaridade com ela. Esta
+ferramenta perimite o registro em diversos níveis, como
+\begin{itemize}
+  \em
+\item info
+\item debug
+\item warn
+\item error
+\end{itemize}
+e pode ser configurada para que apenas os dois últimos
+sejam registrados no ambiente de produção. Desta forma a cada ponto de
+falha da aplicação um log de nível apropriado será colocado para que
+problemas sejam rapidamente identificados, analisados e resolvidos.
+
+\subsection{Integração Contínua}
+
+Visando manter o serviço sempre atualizado para o usuário, a
+ferramenta de integração contínua Jenkins foi selecionada para a
+implantação da aplicação \emph{back-end} em produção. Ela
+permite, a partir do código no repositório git, a execução de testes,
+o build e o \emph{deploy} para o ambiente de produção, automatizando tarefas
+complicadas de se executar em máquinas remotas.
+
+%% front-end ......
+
+\subsection{\emph{Code Conventions}}
+
+As convenções de código são acordos internos ao time que visam
+estandartizar a forma como os diversos integrantes do time produzem
+seus códigos.  Elas visam facilitar o entendimento mútuo entre os
+integrantes do time, de modo o estilo de progamação seja indistiguível
+e independente de seus autores.  Geralmente, as convenções de código
+estabelecem estilos para se organizar o código textualmente, isto é,
+dizem respeito a forma como nomes de variáveis são escolhidas e
+comentários são posicionados, por exemplo.
+
+As convenções adotadas são baseadas na especificação da
+\citeauthor{Oracle1997}, de 1997. Esta é comumente usadas para o
+desenvolvimento na linguagem Java, e muito próxima do padão adotado em
+JavaScript, e vale destacar o seguintes pontos:
+\begin{itemize}
+\item Minimizar o uso de variáveis, funções e objetos globais.
+\item As declarações globais estarão preferencialmente no início do arquivo.
+\item Declarar as variáveis próximo do ponto onde elas serão inicializadas.
+\item A indentação é de 4 espaços.
+\item Linhas mais longas que 80 caracteres serão quebradas e
+  indentadas a 8 espaços.
+\item Pacotes e variáveis com nomes curtos, em \texttt{camelCase} e substantivos.
+\item Classes e interfaces em \texttt{CamelCase} e substantivos.
+\item Métodos em \texttt{camelCase} e verbos.
+\item Constantes em \texttt{UPPER\_CASE}.
+\end{itemize}
+
+No entanto, especificamente para a linguagem Java,
+\begin{itemize}
+\item Classes e métodos devem ser documentados com um comentário na
+  seguinte forma, uma vez que as IDEs reconhecem este formato e
+  formatam o text na forma de \emph{pop-ups} quando o cursor está
+  sobre uma referência a esta classe.
+\begin{verbatim}
+/**
+ * Class ListService
+ *
+ * Implementar endpoints para as funcionalidades de lista.
+ */
+\end{verbatim}
+\end{itemize}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../desenho"
+%%% End:
