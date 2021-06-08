@@ -30,7 +30,7 @@ Visando manter o serviço sempre atualizado para o usuário, a
 ferramenta de integração contínua Jenkins foi selecionada para a
 implantação da aplicação \gls{backend} em produção. Ela
 permite, a partir do código no repositório git, a execução de testes,
-o build e o \emph{deploy} para o ambiente de produção, automatizando tarefas
+o build e o \gls{deploy} para o ambiente de produção, automatizando tarefas
 complicadas de se executar em máquinas remotas.
 
 Para o \gls{frontend}, no entanto, não existem ferramentas de
@@ -99,7 +99,7 @@ Desta forma, a construção de testes, de ambos os tipos é de extrema
 importância para a elaboração do projeto visando a sua
 manutenibilidade, e será o primeiro passo de uma sprint, após o
 planejamento, a construção de testes relevantes para a tarefa,
-seguindo os princípios do TDD. Como as ferramentas de teste são
+seguindo os princípios do TDD\cite{TDD}. Como as ferramentas de teste são
 específicas de cada linguagem, cada camada da aplicação fará uso de
 frameworks distintos.
 
@@ -110,7 +110,7 @@ ferramentas para testar o banco de dados, ou melhor, testar a conexão
 com o banco e verificar o comportamento das classes de acesso a ele.
 Já os teste de \gls{frontend} serão feitos com a biblioteca Jest,
 que auxilia a construção de testes unitários, e por se tratar de uma
-GUI, as interções de usuário devem ser simuladas também. Para tanto, a
+\gls{GUI}, as interções de usuário devem ser simuladas também. Para tanto, a
 blioteca React Testing Library será usada.
 
 %%% Local Variables:
