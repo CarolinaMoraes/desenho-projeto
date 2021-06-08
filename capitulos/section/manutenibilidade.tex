@@ -28,12 +28,12 @@ problemas sejam rapidamente identificados, analisados e resolvidos.
 
 Visando manter o serviço sempre atualizado para o usuário, a
 ferramenta de integração contínua Jenkins foi selecionada para a
-implantação da aplicação \emph{back-end} em produção. Ela
+implantação da aplicação \gls{backend} em produção. Ela
 permite, a partir do código no repositório git, a execução de testes,
 o build e o \emph{deploy} para o ambiente de produção, automatizando tarefas
 complicadas de se executar em máquinas remotas.
 
-Para o \emph{front-end}, no entanto, não existem ferramentas de
+Para o \gls{frontend}, no entanto, não existem ferramentas de
 integração contínua, uma vez que as imagens do aplicativo mobile
 precisam ser aprovadas pelas lojas de aplicativo. Contudo, ainda é
 possível usar ferramentas de CI para a execução de testes e
@@ -103,12 +103,12 @@ seguindo os princípios do TDD. Como as ferramentas de teste são
 específicas de cada linguagem, cada camada da aplicação fará uso de
 frameworks distintos.
 
-O \emph{back-end} será testado com o framework JUnit, fazendo uso da
+O \gls{backend} será testado com o framework JUnit, fazendo uso da
 biblioteca Mockito quando necessário simular comportamentos de objetos
 que não são o alvo da suite de teste. Este framework ainda oferece
 ferramentas para testar o banco de dados, ou melhor, testar a conexão
 com o banco e verificar o comportamento das classes de acesso a ele.
-Já os teste de \emph{front-end} serão feitos com a biblioteca Jest,
+Já os teste de \gls{frontend} serão feitos com a biblioteca Jest,
 que auxilia a construção de testes unitários, e por se tratar de uma
 GUI, as interções de usuário devem ser simuladas também. Para tanto, a
 blioteca React Testing Library será usada.
