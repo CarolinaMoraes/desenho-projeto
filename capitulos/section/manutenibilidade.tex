@@ -77,6 +77,38 @@ No entanto, especificamente para a linguagem Java,
  */
 \end{verbatim}
 \end{itemize}
+
+\subsection{Testes}
+
+Testes são uma ferramenta fundamental para o desenvolvimento da
+aplicação, uma vez que garenatem, em tempo de compilação, o
+comportamento correto do aplicativo. Para além disso, testes tem um
+papel de documentação, uma vez que encapsulam de forma breve o
+comportamento esperado das classes e métodos produzidos, e podem ser
+consultados em caso de dúvida quando ao uso destes. Este tipo de teste
+é chamado de teste unitário, em oposição aos testes de integração, que
+verificam o funcionamento da aplicação de ponta-a-ponta, isto é, a
+partir de uma chamada a um endpoint, apenas os serviços externos são
+mimetizados, garantindo o funcionamento correto de toda a aplicação.
+
+Desta forma, a construção de testes, de ambos os tipos é de extrema
+importância para a elaboração do projeto visando a sua
+manutenibilidade, e será o primeiro passo de uma sprint, após o
+planejamento, a construção de testes relevantes para a tarefa,
+seguindo os princípios do TDD. Como as ferramentas de teste são
+específicas de cada linguagem, cada camada da aplicação fará uso de
+frameworks distintos.
+
+O \emph{back-end} será testado com o framework JUnit, fazendo uso da
+biblioteca Mockito quando necessário simular comportamentos de objetos
+que não são o alvo da suite de teste. Este framework ainda oferece
+ferramentas para testar o banco de dados, ou melhor, testar a conexão
+com o banco e verificar o comportamento das classes de acesso a ele.
+Já os teste de \emph{front-end} serão feitos com a biblioteca Jest,
+que auxilia a construção de testes unitários, e por se tratar de uma
+GUI, as interções de usuário devem ser simuladas também. Para tanto, a
+blioteca React Testing Library será usada.
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../desenho"
